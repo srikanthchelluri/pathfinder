@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 
-import numpy as np
 import cv2
+import numpy as np
 
 def environment(request):
 	return HttpResponse("Endpoint for environment.")
