@@ -53,6 +53,7 @@ def determine_obstacle_matrix(image_url):
 	isolated = cv2.drawContours(original.copy(), [board], -1, (0, 255, 0), 3)
 
 	# Perspective transform
+	# TODO: order 'start' to match points on 'end' using slope (otherwise, images can be rotated when warped)
 	start = np.float32([board[1][0], board[0][0], board[2][0], board[3][0]])
 	end = np.float32([[0,0],[SQUARE_PARAM,0],[0,SQUARE_PARAM],[SQUARE_PARAM,SQUARE_PARAM]])
 	transform = cv2.getPerspectiveTransform(start, end)
